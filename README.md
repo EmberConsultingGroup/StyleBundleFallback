@@ -49,7 +49,6 @@ The solution is to inject an element into the page and apply a style from the st
 * http://github.com/kenwarner/CssCdnFallback
 * http://www.nuget.org/packages/Microsoft.AspNet.Web.Optimization/1.1.2
 * http://aspnetoptimization.codeplex.com/workitem/104
-* http://getbootstrap.com/getting-started/#download
 * http://stackoverflow.com/questions/15519937/using-yepnope-how-can-i-know-if-a-css-resource-was-loaded-successfully
 * http://stackoverflow.com/questions/21807253/determine-if-path-is-cross-domain
 
