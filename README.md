@@ -24,6 +24,8 @@ The [StyleBundleExtensions.cs](http://github.com/EmberConsultingGroup/StyleBundl
 
 It also determines if the stylesheet is on a CDN in another domain and provides a reliable javascript test for the resource. *This should be 99% of the time, because it doesn't really make sense to load resources from a CDN on your own network, but I guess it could happen in a corporate environment.* When the CDN is within the same app domain, the javascript is more robust.
 
+* Make sure you use a Rule Name and Rule Value that will compare accurately in all browsers. For example, an explicit `width` is a good choice, but `font-weight` is not because it may be `bold` or `700` depending on the browser.
+
 * Don't `IncludeFallback` more than one file per CDN bundle... it doesn't make sense, there can only be one `StyleBundle.CdnPath` per bundle.
 
 * It isn't necessary to provide class name, rule name and rule value for a fallback stylesheet coming from a local CDN.
