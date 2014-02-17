@@ -18,7 +18,7 @@ The [StyleBundleExtensions.cs](http://github.com/EmberConsultingGroup/StyleBundl
 
             bundles.Add(new StyleBundle("~/bundles/bootstrap-theme",
                 "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css")
-                .IncludeFallback("~/Content/bootstrap/bootstrap-theme.css", "well", "border-color", "#dcdcdc"));
+                .IncludeFallback("~/Content/bootstrap/bootstrap-theme.css", "well", "background-repeat", "repeat-x"));
         }
 ```
 

@@ -15,11 +15,11 @@ namespace Website
 
             bundles.Add(new StyleBundle("~/bundles/bootstrap",
                 "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css")
-                .IncludeFallback("~/Content/bootstrap/bootstrap.css", "sr-only", "width", "1px"));
+                .IncludeFallback("~/Content/bootstrap/bootstrap.min.css", "sr-only", "width", "1px"));
 
             bundles.Add(new StyleBundle("~/bundles/bootstrap-theme",
                 "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css")
-                .IncludeFallback("~/Content/bootstrap/bootstrap-theme.css", "well", "border-color", "#dcdcdc"));
+                .IncludeFallback("~/Content/bootstrap/bootstrap-theme.min.css", "well", "background-repeat", "repeat-x"));
         }
     }
 }
