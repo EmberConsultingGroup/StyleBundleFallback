@@ -6,7 +6,7 @@ When using [Microsoft ASP.NET Web Optimization Framework](http://www.nuget.org/p
 ### Style Bundle Fallback Solution
 The [StyleBundleExtensions.cs](http://github.com/EmberConsultingGroup/StyleBundleFallback/blob/master/Website/App_Start/StyleBundleExtensions.cs) class provides an extension method to the StyleBundle, that injects a fallback script into the page that will load a local stylesheet when the CDN source fails. To use it, call the `.IncludeFallback()` extension method on the `StyleBundle` object. It is important to provide a class name, rule name and rule value from the stylesheet being loaded from an external CDN.
 
-```
+```c#
         public static void RegisterBundles(BundleCollection bundles)
         {
             BundleTable.EnableOptimizations = true;
