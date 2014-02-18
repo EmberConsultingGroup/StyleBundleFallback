@@ -7,19 +7,19 @@ When using [Microsoft ASP.NET Web Optimization Framework](http://www.nuget.org/p
 The [StyleBundleExtensions.cs](http://github.com/EmberConsultingGroup/StyleBundleFallback/blob/master/Website/App_Start/StyleBundleExtensions.cs) class provides an extension method to the StyleBundle, that injects a fallback script into the page that will load a local stylesheet when the CDN source fails. To use it, call the `.IncludeFallback()` extension method on the `StyleBundle` object. It is important to provide a class name, rule name and rule value from the stylesheet being loaded from an external CDN.
 
 ```c#
-        public static void RegisterBundles(BundleCollection bundles)
-        {
-            BundleTable.EnableOptimizations = true;
-            bundles.UseCdn = true;
+public static void RegisterBundles(BundleCollection bundles)
+{
+    BundleTable.EnableOptimizations = true;
+    bundles.UseCdn = true;
 
-            bundles.Add(new StyleBundle("~/bundles/bootstrap",
-                "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css")
-                .IncludeFallback("~/Content/bootstrap/bootstrap.css", "sr-only", "width", "1px"));
+    bundles.Add(new StyleBundle("~/bundles/bootstrap",
+        "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css")
+        .IncludeFallback("~/Content/bootstrap/bootstrap.css", "sr-only", "width", "1px"));
 
-            bundles.Add(new StyleBundle("~/bundles/bootstrap-theme",
-                "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css")
-                .IncludeFallback("~/Content/bootstrap/bootstrap-theme.css", "well", "background-repeat", "repeat-x"));
-        }
+    bundles.Add(new StyleBundle("~/bundles/bootstrap-theme",
+        "//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css")
+        .IncludeFallback("~/Content/bootstrap/bootstrap-theme.css", "well", "background-repeat", "repeat-x"));
+}
 ```
 
 It also determines if the stylesheet is on a CDN in another domain and provides a reliable javascript test for the resource. *This should be 99% of the time, because it doesn't really make sense to load resources from a CDN on your own network, but I guess it could happen in a corporate environment.* When the CDN is within the same app domain, the javascript is more robust.
