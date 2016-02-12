@@ -66,17 +66,20 @@ namespace Website
                 }}()", bundle.CdnPath, fallback) :
 
                 String.Format(@"function() {{
-                var loadFallback,
-                    len = document.styleSheets.length;
+                var len = document.styleSheets.length;
+                //console.log(""## Testing fallback for {0}"");
                 for (var i = 0; i < len; i++) {{
                     var sheet = document.styleSheets[i];
-                    if (sheet.href.indexOf('{0}') !== -1) {{
+                    if (sheet.href && sheet.href.indexOf('{0}') !== -1) {{
                         var meta = document.createElement('meta');
                         meta.className = '{2}';
                         document.head.appendChild(meta);
                         var value = window.getComputedStyle(meta).getPropertyValue('{3}');
                         document.head.removeChild(meta);
-                        if (value !== '{4}') {{
+                        //console.log(""Comparing: "" + value)
+                        //console.log(""To:        {4}"")
+                        if (value !== ""{4}"") {{
+                            //console.log(""Fallback on CSS: "" + ""{1}"");
                             document.write('<link href=""{1}"" rel=""stylesheet"" type=""text/css"" />');
                         }}
                     }}
